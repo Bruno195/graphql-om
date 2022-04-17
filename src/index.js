@@ -26,7 +26,10 @@ const server = new ApolloServer({
   },
   uploads: false,
   cors: {
-    origin: ['https://focused-bartik-8938e3.netlify.app'],
+    origin: [
+      'https://focused-bartik-8938e3.netlify.app',
+      'http://localhost:3000/',
+    ],
     credentials: true,
   },
   subscriptions: {
