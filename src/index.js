@@ -26,7 +26,7 @@ const server = new ApolloServer({
   },
   uploads: false,
   cors: {
-    origin: ['http://localhost:3000/'],
+    origin: ['http://localhost:3000/', 'http://192.168.1.4:3000'],
     credentials: true,
   },
   subscriptions: {
