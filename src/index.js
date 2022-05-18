@@ -1,16 +1,12 @@
+import { resolvers, typeDefs } from './graphql/schema';
+
 import { ApolloServer } from 'apollo-server';
-
-import { knex } from './knex/';
-
-import { context } from './graphql/context';
-
+import { CommentSQLDataSource } from './graphql/schema/comment/datasources';
+import { LoginApi } from './graphql/schema/login/datasources';
 import { PostsApi } from './graphql/schema/post/datasources';
 import { UsersApi } from './graphql/schema/user/datasources';
-
-import { resolvers, typeDefs } from './graphql/schema';
-import { LoginApi } from './graphql/schema/login/datasources';
-
-import { CommentSQLDataSource } from './graphql/schema/comment/datasources';
+import { context } from './graphql/context';
+import { knex } from './knex/';
 
 const server = new ApolloServer({
   typeDefs,
@@ -26,7 +22,7 @@ const server = new ApolloServer({
   },
   uploads: false,
   cors: {
-    origin: ['http://localhost:3000/', 'http://192.168.1.4:3000'],
+    origin: ['https://localhost:3000/', 'http://192.168.1.4:3000', 'http://127.0.0.1:3000'],
     credentials: true,
   },
   subscriptions: {
